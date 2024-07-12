@@ -1,34 +1,67 @@
 import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
+import Card from './components/Card.jsx';
+import RulesModal from './components/RulesModal.jsx';
 import './App.css'
 
 function App() {
-  const [count, setCount] = useState(0)
+  const [modalIsActive, setModalIsActive] = useState(false);
+
+  function controlRulesModalDisplay() {
+    if (!modalIsActive) {
+      setModalIsActive(true);
+      console.log('you can now see the rules modal');
+    } else {
+      setModalIsActive(false);
+      console.log('the rules modal is now hidden');
+    }
+
+  }
 
   return (
     <>
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
+      <RulesModal 
+        isActive={modalIsActive}
+        onClose={controlRulesModalDisplay}
+      />
+      <div className="main-page">
+        <div className="page-header">
+          <h1>Memory Game</h1>
+          <div className="header-buttons">
+            <button>Reset</button>
+            <button
+            onClick={controlRulesModalDisplay}>How it Works</button>
+            <button>See the Code</button>
+          </div>
+        </div>
+        <div className="scores">
+          <span>Your Score: </span>
+          <span>High Score: </span>
+        </div>
+        <div className="game-board">
+          <Card 
+            img="https://upload.wikimedia.org/wikipedia/en/f/fd/Pusheen_the_Cat.png"
+            title="Pusheen"
+          />
+          <Card 
+            img="https://upload.wikimedia.org/wikipedia/en/f/fd/Pusheen_the_Cat.png"
+            title="Pusheen"
+          />
+          <Card 
+            img="https://upload.wikimedia.org/wikipedia/en/f/fd/Pusheen_the_Cat.png"
+            title="Pusheen"
+          />
+          <Card 
+            img="https://upload.wikimedia.org/wikipedia/en/f/fd/Pusheen_the_Cat.png"
+            title="Pusheen"
+          />
+          <Card 
+            img="https://upload.wikimedia.org/wikipedia/en/f/fd/Pusheen_the_Cat.png"
+            title="Pusheen"
+          />
+        </div>
       </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
     </>
+
   )
 }
 
