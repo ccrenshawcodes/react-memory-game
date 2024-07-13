@@ -1,20 +1,25 @@
 import { useState } from 'react'
 import Card from './components/Card.jsx';
 import RulesModal from './components/RulesModal.jsx';
+import Scores from './components/scores.jsx';
 import './App.css'
 
 function App() {
   const [modalIsActive, setModalIsActive] = useState(false);
+  const [currentScore, setCurrentScore] = useState(0);
+  const [highScore, setHighScore] = useState(0);
 
   function controlRulesModalDisplay() {
     if (!modalIsActive) {
       setModalIsActive(true);
-      console.log('you can now see the rules modal');
     } else {
       setModalIsActive(false);
-      console.log('the rules modal is now hidden');
     }
+  }
 
+  function handleScoreReset() {
+    setCurrentScore(0);
+    setHighScore(0);
   }
 
   return (
@@ -23,20 +28,30 @@ function App() {
         isActive={modalIsActive}
         onClose={controlRulesModalDisplay}
       />
+
       <div className="main-page">
         <div className="page-header">
           <h1>Memory Game</h1>
           <div className="header-buttons">
-            <button>Reset</button>
+            <button 
+              onClick={handleScoreReset}
+            >
+              Reset
+            </button>
             <button
-            onClick={controlRulesModalDisplay}>How it Works</button>
-            <button>See the Code</button>
+              onClick={controlRulesModalDisplay}
+            >
+              How to Play
+            </button>
+            <button><a href="https://github.com/ccrenshawcodes/react-memory-game" target="_blank">See the Code</a></button>
           </div>
         </div>
-        <div className="scores">
-          <span>Your Score: </span>
-          <span>High Score: </span>
-        </div>
+
+        <Scores
+          current={currentScore}
+          high={highScore} 
+        />
+
         <div className="game-board">
           <Card 
             img="https://upload.wikimedia.org/wikipedia/en/f/fd/Pusheen_the_Cat.png"
@@ -59,6 +74,7 @@ function App() {
             title="Pusheen"
           />
         </div>
+
       </div>
     </>
 
@@ -66,3 +82,18 @@ function App() {
 }
 
 export default App
+
+/* 
+TODO:
+  - figure out how to set scores based on Card clicks
+  - set up cards data file
+  - grab cats from the cat api
+  - figure out how to shuffle cards after click (useEffect probs)
+  - implement confetti on win
+
+NIT:
+  - Fix grid spacing so it doesn't overflow the page
+  - Fix "see the code" button - <a> is currently smaller than its parent button,
+    making the experience of clicking it a little weird
+  - Fix header positions/spacing 
+*/
