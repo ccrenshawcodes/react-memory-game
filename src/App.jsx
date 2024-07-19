@@ -2,6 +2,7 @@ import { useState } from 'react'
 import Card from './components/Card.jsx';
 import RulesModal from './components/RulesModal.jsx';
 import Scores from './components/scores.jsx';
+import { data } from '../data.js';
 import './App.css'
 
 function App() {
@@ -21,6 +22,17 @@ function App() {
     setCurrentScore(0);
     setHighScore(0);
   }
+
+/*   function handleCardClick (cardId, isUnique) {
+    if (isUnique) {
+      setCurrentScore(currentScore + 1);
+      //  mark cardId as clicked
+    }
+    if (!isUnique) {
+      setCurrentScore(0);
+      //  mark all cardIds as unclicked
+    }
+  } */
 
   return (
     <>
@@ -53,26 +65,15 @@ function App() {
         />
 
         <div className="game-board">
-          <Card 
-            img="https://upload.wikimedia.org/wikipedia/en/f/fd/Pusheen_the_Cat.png"
-            title="Pusheen"
-          />
-          <Card 
-            img="https://upload.wikimedia.org/wikipedia/en/f/fd/Pusheen_the_Cat.png"
-            title="Pusheen"
-          />
-          <Card 
-            img="https://upload.wikimedia.org/wikipedia/en/f/fd/Pusheen_the_Cat.png"
-            title="Pusheen"
-          />
-          <Card 
-            img="https://upload.wikimedia.org/wikipedia/en/f/fd/Pusheen_the_Cat.png"
-            title="Pusheen"
-          />
-          <Card 
-            img="https://upload.wikimedia.org/wikipedia/en/f/fd/Pusheen_the_Cat.png"
-            title="Pusheen"
-          />
+          {
+            data.map((cat) => (
+              <Card 
+                img={cat.photo}
+                title={cat.catName}
+                key={cat.id}
+              />
+            ))
+          }
         </div>
 
       </div>
@@ -86,7 +87,7 @@ export default App
 /* 
 TODO:
   - figure out how to set scores based on Card clicks
-  - set up cards data file
+  - set up cards data file - DONE
   - grab cats from the cat api
   - figure out how to shuffle cards after click (useEffect probs)
   - implement confetti on win
