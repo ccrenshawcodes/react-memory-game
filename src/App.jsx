@@ -12,6 +12,30 @@ function App() {
   const [currentScore, setCurrentScore] = useState(0);
   const [highScore, setHighScore] = useState(0);
   const [gameResult, setGameResult] = useState('');
+  const [clickedCards, setClickedCards] = useState([]);
+
+  function handleCardClick(index) {
+    if (clickedCards.includes(index)) {
+      gameLoss();
+    } else {
+      setClickedCards(clickedCards.concat(index));
+      incrementScore();
+      gameWin();
+    }
+  }
+
+  function handleScoreReset() {
+    setCurrentScore(0);
+    setHighScore(0);
+  }
+
+  function incrementScore() {
+    let newScore = currentScore + 1;
+    setCurrentScore(newScore);
+    if (newScore > highScore) {
+      setHighScore(newScore);
+    }
+  }
 
   function controlRulesModalDisplay() {
     if (!rulesModalIsActive) {
@@ -26,32 +50,21 @@ function App() {
     setCurrentScore(0);
   }
 
-  function handleScoreReset() {
-    setCurrentScore(0);
-    setHighScore(0);
-  }
-
   function gameLoss () {
     setGameResult('loss');
     setHighScore(currentScore);
     setCurrentScore(0)
     setEndGameModalActive(true);
+    setClickedCards([]);
+
   }
 
   function gameWin () {
     if (currentScore >= 11) {
       setGameResult('win');
       setEndGameModalActive('true');
+      setClickedCards([]);
     }
-  }
-
-  function incrementScore() {
-    let newScore = currentScore + 1;
-    setCurrentScore(newScore);
-    if (newScore > highScore) {
-      setHighScore(newScore);
-    }
-    gameWin();
   }
 
   const mappedCats = data.map(cat => (
@@ -59,8 +72,8 @@ function App() {
       img={cat.photo}
       title={cat.catName}
       key={cat.id}
-      endGame={gameLoss}
-      adjustScore={incrementScore}
+      cardId={cat.id}
+      onClick={handleCardClick}
     />
   ))
 
@@ -103,10 +116,8 @@ function App() {
         <div className="game-board">
           {mappedCats}
         </div>
-
       </div>
     </>
-
   )
 }
 
@@ -114,10 +125,8 @@ export default App
 
 /* 
 TODO:
-  - figure out how to reset card 'clicked' state when game restarts
-  - set up cards data file - DONE
-  - grab cats from the cat api
-  - figure out how to shuffle cards after click (useEffect probs)
+  - decide on a theme and import everything
+  - figure out how to shuffle cards after click (useEffect probs?)
   - implement confetti on win
   - add 'your score' on the 'you lost' modal
 

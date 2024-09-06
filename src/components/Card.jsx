@@ -1,16 +1,8 @@
-import { useState } from 'react';
+function Card( {img, title, cardId, onClick} ) {
 
-function Card( {img, title, endGame, adjustScore} ) {
-  const [hasBeenClicked, setHasBeenClicked] = useState(false);
-
-  function handleClick () {
-    if (hasBeenClicked) {
-      endGame();
-    } else {
-      setHasBeenClicked(true);
-      adjustScore();
+    function handleClick () {
+      onClick(cardId);
     }
-  }
 
   return (
     <div 
