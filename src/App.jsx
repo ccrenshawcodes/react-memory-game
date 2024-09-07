@@ -4,6 +4,7 @@ import RulesModal from './components/RulesModal.jsx';
 import EndGameModal from './components/EndGameModal.jsx';
 import Scores from './components/scores.jsx';
 import { data } from '../data.js';
+import { shuffle } from '../shuffle.js';
 import './App.css'
 
 function App() {
@@ -14,6 +15,8 @@ function App() {
   const [gameResult, setGameResult] = useState('');
   const [clickedCards, setClickedCards] = useState([]);
 
+  let shuffledData = shuffle(data);
+  
   function handleCardClick(index) {
     if (clickedCards.includes(index)) {
       gameLoss();
@@ -46,6 +49,7 @@ function App() {
   }
 
   function handleCloseEndGameModal() {
+    setGameResult('');
     setEndGameModalActive(false);
     setCurrentScore(0);
   }
@@ -64,7 +68,7 @@ function App() {
     }
   }
 
-  const mappedCats = data.map(cat => (
+  const mappedCats = shuffledData.map(cat => (
     <Card 
       img={cat.photo}
       title={cat.catName}
