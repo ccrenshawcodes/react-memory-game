@@ -51,12 +51,9 @@ function App() {
   }
 
   function gameLoss () {
-    setGameResult('loss');
-    setHighScore(currentScore);
-    setCurrentScore(0)
     setEndGameModalActive(true);
+    setGameResult('loss');
     setClickedCards([]);
-
   }
 
   function gameWin () {
@@ -88,6 +85,7 @@ function App() {
         isActive={endGameModalActive}
         onClose={handleCloseEndGameModal}
         outcome={gameResult}
+        score={currentScore}
       />
 
       <div className="main-page">
@@ -126,9 +124,8 @@ export default App
 /* 
 TODO:
   - decide on a theme and import everything
-  - figure out how to shuffle cards after click (useEffect probs?)
+  - figure out how to shuffle cards after click (useEffect probably?) - might use fisher-yates shuffle algorithm
   - implement confetti on win
-  - add 'your score' on the 'you lost' modal
 
 NIT:
   - Fix "see the code" button - <a> is currently smaller than its parent button,
