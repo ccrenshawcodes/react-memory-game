@@ -1,3 +1,5 @@
+import confetti from "canvas-confetti";
+
 function EndGameModal ({isActive, onClose, outcome, score}) {
 
   function determineText(outcome) {
@@ -7,6 +9,7 @@ function EndGameModal ({isActive, onClose, outcome, score}) {
       headerText = 'You win!';
       bodyText = 'You have an amazing memory!';
       buttonText = 'Play again';
+      confetti({spread: 180});
     } else if (outcome === 'loss') {
       headerText = 'You lost!';
       bodyText = `Good try! Your score was ${score} out of 12.`;
@@ -31,8 +34,3 @@ function EndGameModal ({isActive, onClose, outcome, score}) {
 }
 
 export default EndGameModal
-
-/* 
-  why is "outcome" undefined every time? No matter if I set it as "win" when this component
-  is called, or if I set gameResult to "win" and set outcome = gameResult...? 
-*/
