@@ -1,11 +1,12 @@
 #root {
   text-align: center;
+  box-sizing: border-box;
 }
 
 /* MODALS */
 
 .rules-modal-bg, .end-game-modal-bg {
-  background-color: rgb(0 0 0 / 80%);
+  background-color: rgb(0 0 0 / 60%);
   position: fixed;
   z-index: 1;
   width: 100%;
@@ -15,8 +16,9 @@
 }
 
 .rules-modal, .end-game-modal {
+  /* background-color: rgb(255 255 255 / 75%); */
   background-color: white;
-  width: 80%;
+  width: 50%;
   margin: 15% auto;
   border-radius: 8px;
   padding: 2em;
@@ -28,7 +30,7 @@
   font-family: sans-serif;
 }
 
-.ok-button-modal {
+.ok-button-modal, .play-again {
   padding: 0.5em 2em;
 }
 
@@ -37,7 +39,7 @@
 .main-page {
   display: block;
   margin: 0 auto;
-  padding: 2rem;
+  padding: 1rem 2rem 0 2rem;
 }
 
 .page-header {
@@ -46,12 +48,14 @@
   justify-content: center;
   align-items: center;
   background-color: rgb(255 255 255 / 30%);
+  margin: 0 2%;
 }
 
 .page-header > h1 {
   flex: 4;
   text-align: left;
   margin: 16px;
+  font-size: calc(1.7vw + 1.7vh);
 }
 
 .header-buttons {
@@ -68,6 +72,7 @@ button > a {
 .header-buttons > button {
   margin: 1em;
   padding: 0.5em;
+  width: 7em;
 }
 
 .scores {
@@ -75,29 +80,38 @@ button > a {
   display: flex;
   flex-direction: column;
   align-items: flex-end;
-  margin: 16px;
-}
-
-.scores > * {
-  padding: 0.5em;
+  margin: 16px 2%;
 }
 
 /*  BOARD GRID  */
 
 .game-board {
-  display: inline-grid;
+  display: grid;
   grid-template-columns: repeat(6, 1fr);
-  gap: 1em;
+  gap: 1.5em;
+  height: fit-content;
+  margin: 2%;
+  min-width: 0;
 }
 
 .memory-card {
   border: 1px solid black;
   border-radius: 12px;
-  background-color: rgb(255 255 255 / 40%);
-  padding: 0.5em;
+  background-color: rgb(255 255 255 / 45%);
+  display: flex;
+  flex-direction: column;
+    &:hover {
+      cursor: pointer;
+    }
 }
 
 .memory-card > img {
-  width: 100%;
+  height: 30vh;
   border-radius: 12px;
+  max-width: 100%;
+}
+
+.memory-card > p {
+  padding: 0.5em;
+  font-size: calc(0.6vw + 0.6vh);
 }

@@ -95,6 +95,10 @@ function App() {
       <div className="main-page">
         <div className="page-header">
           <h1>Studio Ghibli Memory Game</h1>
+          <Scores
+          current={currentScore}
+          high={highScore} 
+        />
           <div className="header-buttons">
             <button 
               onClick={handleScoreReset}
@@ -110,13 +114,8 @@ function App() {
           </div>
         </div>
 
-        <Scores
-          current={currentScore}
-          high={highScore} 
-        />
-
         <div className="game-board">
-          {mappedCats}
+          {!endGameModalActive && mappedCats}
         </div>
       </div>
     </>
@@ -137,6 +136,7 @@ NIT:
   - Fix header positions/spacing 
   - Styling for the whole page
   - pointer style for card hover
+  - optional: drop all cards on game completion; drop all cards; transparency
 
 BUGS:
   -
