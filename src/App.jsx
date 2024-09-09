@@ -110,7 +110,7 @@ function App() {
             >
               How to Play
             </button>
-            <button><a href="https://github.com/ccrenshawcodes/react-memory-game" target="_blank">See the Code</a></button>
+            <a href="https://github.com/ccrenshawcodes/react-memory-game" target="_blank"><button>See the Code</button></a>
           </div>
         </div>
 
@@ -128,16 +128,4 @@ export default App
 TODO:
   - delay & flip effect for the cards when they shuffle
   - I probably need to break some of this out into separate components
-  - import images as assets instead of using internet urls
-
-NIT:
-  - Fix "see the code" button - <a> is currently smaller than its parent button,
-    making the experience of clicking it a little weird. and it lights up
-  - Fix header positions/spacing 
-  - Styling for the whole page
-  - pointer style for card hover
-  - optional: drop all cards on game completion; drop all cards; transparency
-
-BUGS:
-  -
 */
