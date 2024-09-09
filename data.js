@@ -1,79 +1,62 @@
 export const data = [
 {
     id: 0,
-    catName: 'Jerome',
-    photo: 'https://images.pexels.com/photos/45201/kitty-cat-kitten-pet-45201.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500',
+    catName: 'The Castle of Cagliostro',
+    photo: 'https://upload.wikimedia.org/wikipedia/en/4/4f/Castle_of_Cagliostro_poster.png',
   },
 {
     id: 1,
-    catName: 'John',
-    photo: 'https://images.pexels.com/photos/45201/kitty-cat-kitten-pet-45201.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500',
+    catName: 'Nausicaä of the Valley of the Wind',
+    photo: 'https://upload.wikimedia.org/wikipedia/en/b/bc/Nausicaaposter.jpg',
   },
 {
     id: 2,
-    catName: 'James',
-    photo: 'https://images.pexels.com/photos/45201/kitty-cat-kitten-pet-45201.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500',
+    catName: 'Castle in the Sky',
+    photo: 'https://upload.wikimedia.org/wikipedia/en/f/f5/Castle_in_the_Sky_%281986%29.png',
   },
 {
     id: 3,
-    catName: 'Jacob',
-    photo: 'https://images.pexels.com/photos/45201/kitty-cat-kitten-pet-45201.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500',
+    catName: 'My Neighbor Totoro',
+    photo: 'https://upload.wikimedia.org/wikipedia/en/0/02/My_Neighbor_Totoro_-_Tonari_no_Totoro_%28Movie_Poster%29.jpg',
   },
 {
     id: 4,
-    catName: 'Joseph',
-    photo: 'https://images.pexels.com/photos/45201/kitty-cat-kitten-pet-45201.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500',
+    catName: 'Kiki\'s Delivery Service',
+    photo: 'https://upload.wikimedia.org/wikipedia/en/0/07/Kiki%27s_Delivery_Service_%28Movie%29.jpg',
   },
 {
     id: 5,
-    catName: 'Jerry',
-    photo: 'https://images.pexels.com/photos/45201/kitty-cat-kitten-pet-45201.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500',
+    catName: 'Porco Rosso',
+    photo: 'https://upload.wikimedia.org/wikipedia/en/f/fc/Porco_Rosso_%28Movie_Poster%29.jpg',
   },
 {
     id: 6,
-    catName: 'Joshua',
-    photo: 'https://images.pexels.com/photos/45201/kitty-cat-kitten-pet-45201.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500',
+    catName: 'Princess Mononoke',
+    photo: 'https://upload.wikimedia.org/wikipedia/en/8/8c/Princess_Mononoke_Japanese_poster.png',
   },
 {
     id: 7,
-    catName: 'Jensen',
-    photo: 'https://images.pexels.com/photos/45201/kitty-cat-kitten-pet-45201.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500',
+    catName: 'Spirited Away',
+    photo: 'https://upload.wikimedia.org/wikipedia/en/d/db/Spirited_Away_Japanese_poster.png',
   },
 {
     id: 8,
-    catName: 'Jonah',
-    photo: 'https://images.pexels.com/photos/45201/kitty-cat-kitten-pet-45201.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500',
+    catName: 'Howl\'s Moving Castle',
+    photo: 'https://upload.wikimedia.org/wikipedia/en/a/a0/Howls-moving-castleposter.jpg',
   },
 {
     id: 9,
-    catName: 'Johann',
-    photo: 'https://images.pexels.com/photos/45201/kitty-cat-kitten-pet-45201.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500',
+    catName: 'Ponyo',
+    photo: 'https://upload.wikimedia.org/wikipedia/en/5/51/Ponyo.png',
   },
 {
     id: 10,
-    catName: 'Jed',
-    photo: 'https://images.pexels.com/photos/45201/kitty-cat-kitten-pet-45201.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500',
+    catName: 'The Wind Rises',
+    photo: 'https://upload.wikimedia.org/wikipedia/en/a/a3/Kaze_Tachinu_poster.jpg',
   },
 {
     id: 11,
-    catName: 'Jeremiah',
-    photo: 'https://images.pexels.com/photos/45201/kitty-cat-kitten-pet-45201.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500',
+    catName: 'The Boy and the Heron',
+    photo: 'https://upload.wikimedia.org/wikipedia/en/4/41/How_Do_You_Live_poster.jpg',
   },
 ]
-
-/* 
-Taylor Swift albums
-
-Taylor Swift (2006)
-Fearless (2008)
-Speak Now (2010)
-Red (2012)
-1989 (2014)
-Reputation (2017)
-Lover (2019)
-Folklore (2020)
-Evermore (2020)
-Midnights (2022)
-The Tortured Poets Department (2024)
-
-*/

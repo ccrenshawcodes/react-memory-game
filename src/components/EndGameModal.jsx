@@ -12,7 +12,7 @@ function EndGameModal ({isActive, onClose, outcome, score}) {
       confetti({spread: 180});
     } else if (outcome === 'loss') {
       headerText = 'You lost!';
-      bodyText = `Good try! Your score was ${score} out of 12.`;
+      bodyText = `Good try! Your score was: ${score} out of 12.`;
       buttonText = 'Try again';
     }
     return {headerText, bodyText, buttonText};

@@ -25,6 +25,7 @@
 .x-button-modal {
   float: right;
   background-color: inherit;
+  font-family: sans-serif;
 }
 
 .ok-button-modal {
@@ -44,10 +45,13 @@
   flex-direction: row;
   justify-content: center;
   align-items: center;
+  background-color: rgb(255 255 255 / 30%);
 }
 
 .page-header > h1 {
   flex: 4;
+  text-align: left;
+  margin: 16px;
 }
 
 .header-buttons {
@@ -71,6 +75,11 @@ button > a {
   display: flex;
   flex-direction: column;
   align-items: flex-end;
+  margin: 16px;
+}
+
+.scores > * {
+  padding: 0.5em;
 }
 
 /*  BOARD GRID  */
@@ -83,9 +92,12 @@ button > a {
 
 .memory-card {
   border: 1px solid black;
-  border-radius: 8px;
+  border-radius: 12px;
+  background-color: rgb(255 255 255 / 40%);
+  padding: 0.5em;
 }
 
 .memory-card > img {
   width: 100%;
+  border-radius: 12px;
 }

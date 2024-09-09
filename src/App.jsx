@@ -94,7 +94,7 @@ function App() {
 
       <div className="main-page">
         <div className="page-header">
-          <h1>Memory Game</h1>
+          <h1>Studio Ghibli Memory Game</h1>
           <div className="header-buttons">
             <button 
               onClick={handleScoreReset}
@@ -127,14 +127,16 @@ export default App
 
 /* 
 TODO:
-  - decide on a theme and import everything
-  - figure out how to shuffle cards after click (useEffect probably?) - might use fisher-yates shuffle algorithm
-  - implement confetti on win
+  - delay & flip effect for the cards when they shuffle
+  - I probably need to break some of this out into separate components
+  - import images as assets instead of using internet urls
 
 NIT:
   - Fix "see the code" button - <a> is currently smaller than its parent button,
-    making the experience of clicking it a little weird
+    making the experience of clicking it a little weird. and it lights up
   - Fix header positions/spacing 
+  - Styling for the whole page
+  - pointer style for card hover
 
 BUGS:
   -
